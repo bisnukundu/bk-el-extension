@@ -29,8 +29,8 @@ class Bk_text_widget extends \Elementor\Widget_Base
 	}
 
 	public function get_style_depends()
-	{ 
-		// 	Added style handler name to use this style in this widget.git
+	{
+		// 	Added style handler name to use this style in this widget.
 		return ['bk_text_style'];
 	}
 
@@ -38,6 +38,25 @@ class Bk_text_widget extends \Elementor\Widget_Base
 	protected function get_upsale_data(): array
 	{
 		return [];
+	}
+	function register_controls()
+	{
+		$this->start_controls_section(
+			'bk_text_content_section',
+			[
+				'label' => __("BK Text Content Section"),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT
+			]
+		);
+		$this->add_control(
+			'bk_text',
+			[
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label' => __("BK Text"),
+				'placeholder' => __("Enter Your Text...")
+			]
+		);
+		$this->end_controls_section();
 	}
 
 	function render()
