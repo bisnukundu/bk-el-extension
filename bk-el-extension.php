@@ -17,6 +17,7 @@ class Bk_el_extension
     {
         add_action('elementor/widgets/register', [$this, 'register_elementor_widget']);
         add_action('elementor/elements/categories_registered', [$this, 'bk_register_widget_category']);
+        add_action('wp_enqueue_scripts', [$this, 'add_bk_styles_script']);
     }
 
     function register_elementor_widget($widgets_manager)
@@ -37,6 +38,16 @@ class Bk_el_extension
         );
     }
 
+    // Register Style and Script 
+    function add_bk_styles_script()
+    {
+        wp_register_style(
+            'bk_text_style',
+            BK_EL_URL . 'assets/css/style.css',
+            [],
+            time(),
+        );
+    }
 }
 
 new Bk_el_extension();
