@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: BK Elementor Extension
- * Version: 1.0.0
+ * Version: 3.0.0
  * Description: This is a Elementor Widgets extension.
  * Author: Bisnu Kundu
  * Author URI: https://bisnukundu.netlify.app/
